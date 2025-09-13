@@ -1,20 +1,9 @@
-import "./ProductCart.css"
-function ProductCart({ name, price, isAvailable }) {
-    const stockStyle = {
-        color: isAvailable ? 'green' : 'blue'
-    };
-
+function ProductCart({ productname, price, isAvailable }) {
     return (
-        <div style={{
-            border: '1px solid #ccc',
-            padding: '20px',
-            width: '200px',
-            margin: '10px',
-            backgroundColor: '#f5f5f5'
-        }}>
-            <p>{name}</p>
+        <div className="product-cart">
+            <p>{productname}</p>
             <p>₹{price}</p>
-            <p style={stockStyle}>
+            <p className={isAvailable ? "in-stock" : "out-of-stock"}>
                 {isAvailable ? "Stock is available" : "Out of stock"}
             </p>
         </div>

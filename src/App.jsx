@@ -1,19 +1,53 @@
-import User from "./User.jsx";
-
+import "./App.css"
+import {useState} from "react"
 function App() {
-    return (
-        <div style={{ display: "flex", justifyContent: "center", flexWrap: "wrap" }}>
-            <User
-                photoUrl="https://sm.mashable.com/mashable_in/photo/default/pra_dq64.png"
-                name="Meesala Manoj"
-                course="B.Tech Computer Science"
-                rollNo="23VV1A0531"
-                bloodGroup="AB-"
-                dob="01.10.2005"
-            />
-           
-        </div>
-    );
+    const[count,setCount]=useState(0)
+    const[email,setEmail]=useState("")
+    const[password,setPassword]=useState("")  
+
+    const[formData,setFormData]=useState({
+      email:"",
+      password:""
+    })
+
+
+    
+   const handleClick=(name)=>{
+     alert("Login Successful")
+   }
+   const handleSubmit=(event)=>{
+     event.preventDefault();
+     alert(`Email:${email}\nPassword:${password}\nYou are logged in`)
+   }
+   const handleChange=(event)=>{
+     console.log(event.target.name)
+     console.log(event.target.value)
+   }
+
+  const handleEmail=(event)=>{
+    setEmail(event.target.value)
+  }
+  const handlePassword=(event)=>{
+    setPassword(event.target.value)
+  }
+  const handleIncrement=()=>{
+    setCount((prevCount)=>prevCount+1)
+    console.log(count)
+  }
+  
+  return (
+    <div>
+      {<form onSubmit={handleSubmit}>
+      <p>Iam a button</p>
+      <input type="text" name="Email" placeholder="Enter your Email" onChange={handleChange}/><br/>
+      <input type="password" name="password" placeholder="Enter your password" onChange={handleChange}/><br/>
+      <button type="Submit">Login</button>
+      </form> }
+      <p>{count}</p>
+      <button onClick={handleIncrement}>Increment</button>
+    </div>
+  )
+
 }
 
-export default App;
+export default App
