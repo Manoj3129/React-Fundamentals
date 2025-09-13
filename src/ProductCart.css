@@ -1,0 +1,19 @@
+.product-container {
+    display: flex;
+    justify-content: center;
+}
+
+.product-card {
+    border: 1px solid #ccc;
+    padding: 20px;
+    width: 200px;
+    margin: 10px;
+}
+
+.available {
+    color: green;
+}
+
+.unavailable {
+   color: blue;
+}

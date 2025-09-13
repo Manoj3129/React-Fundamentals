@@ -1,0 +1,27 @@
+.student-card {
+    width: 500px;
+    height:700px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #f7f7f7;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    text-align: center;
+    margin: 20px;
+    font-family: Arial, sans-serif;
+}
+
+.student-photo {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.student-details {
+    padding: 120px;
+}
+
+.student-details p {
+    margin: 8px 0;
+    font-size: 14px;
+}
